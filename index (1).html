@@ -3,47 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Diri</title>
+    <title>Profil Diri - Fahreizy Millano Putra</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #090d16 100%);
+            color: #f8fafc;
+            padding: 20px;
+        }
+
+     
+        .profile-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            max-width: 450px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -12px rgba(56, 189, 248, 0.25);
+        }
+
+        .card-header {
+            height: 130px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            position: relative;
+        }
+
+        .avatar-wrapper {
+            width: 135px;
+            height: 135px;
+            margin: -68px auto 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .avatar-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #1e293b;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+            background-color: #334155;
+        }
+
+        
+        .card-body {
+            padding: 0 30px 35px;
             text-align: center;
         }
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
         }
-        img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover; /* Tambahan agar foto tidak gepeng */
-            border-radius: 50%;
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(139, 92, 246, 0.2);
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
             margin-bottom: 20px;
         }
-        h1 {
-            color: #333;
+
+   
+        .about-box {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 14px;
+            padding: 15px;
+            margin-bottom: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        p {
-            font-size: 16px;
-            color: #666;
+
+        .about-box p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.2s ease, border-color 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .info-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+
+        .info-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .icon-email { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+        .icon-phone { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+        .icon-loc   { background: rgba(244, 63, 94, 0.2);  color: #fb7185; }
+
+        .info-text span {
+            display: block;
+            font-size: 0.72rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-text p {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #f1f5f9;
+            word-break: break-all;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="fotoprofil.jpeg" alt="Foto Profil">
-        <h1>Fahreizy Millano Putra</h1>
-        <p><strong>Email:</strong> Fahreizymillanoputra@gmail.com</p>
-        <p><strong>Telepon:</strong> 085129897036</p>
-        <p><strong>Alamat:</strong> Makassar, Indonesia</p>
-        <p><strong>Tentang Saya:</strong> Saya adalah seorang yang senang bermain game mobile</p>
+
+    <div class="profile-card">
+   
+        <div class="card-header"></div>
+
+       
+        <div class="avatar-wrapper">
+            <img src="fotoprofil.jpeg" alt="Foto Profil Fahreizy">
+        </div>
+
+      
+        <div class="card-body">
+            <h1>Fahreizy Millano Putra</h1>
+            
+            <div class="badge">
+                <i class="fas fa-gamepad"></i> Mobile Gamer
+            </div>
+
+            <div class="about-box">
+                <p>"Saya adalah seorang Mahasiswa STMIK KHARISMA yang senang bermain game online."</p>
+            </div>
+
+            <div class="info-list">
+                
+                <a href="mailto:Fahreizymillanoputra@gmail.com" class="info-item">
+                    <div class="info-icon icon-email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-text">
+                        <span>Email</span>
+                        <p>Fahreizymillanoputra@gmail.com</p>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/6285129897036" target="_blank" class="info-item">
+                    <div class="info-icon icon-phone">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <span>Telepon / WhatsApp</span>
+                        <p>085129897036</p>
+                    </div>
+                </a>
+
+                <!-- Alamat -->
+                <div class="info-item">
+                    <div class="info-icon icon-loc">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <span>Alamat</span>
+                        <p>Makassar, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
